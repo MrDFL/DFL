@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Our Love Story</title>
+
+<style type="text/css">
+	html {
+		position: fixed;
+		width:100%;
+		height:100%;
+	}
+	body {
+		position:fixed;
+		width:100%;
+		height:100%;
+	}
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: inherit;
+	}
+	.card-container {
+		position: relative;
+		width: 65vmin;
+		height: 80vmin;
+	}
+	.card {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 50%;
+		height: 50%;
+		background-color: #fafafa;
+		border-radius: 2px;
+		box-shadow: 2px 2px 5px rgba(17, 17, 17, 0.35);
+		-webkit-transition: -webkit-transform .35s ease-out;
+		transition: -webkit-transform .35s ease-out;
+		transition: transform .35s ease-out;
+		transition: transform .35s ease-out, -webkit-transform .35s ease-out;
+		-webkit-transform: translate(var(--x), var(--y)) scale(0.35) rotate(var(--angle));
+		transform: translate(var(--x), var(--y)) scale(0.35) rotate(var(--angle));
+		will-change: transform;
+	}
+	.card:hover {
+		-webkit-transform: scale(1) rotate(0deg);
+		transform: scale(1) rotate(0deg);
+		z-index: 1;
+	}
+	.card:hover:before {
+		opacity: 1;
+	}
+
+	.card:before {
+		content: "";
+		display: block;
+		width: 90%;
+		height: 80%;
+		margin: 5%;
+		background: var(--image) center center no-repeat;
+		background-size: cover;
+		box-shadow: inset 0 0 5px rgba(34, 34, 34, 0.35);
+		border-radius: 2px;
+		-webkit-filter: sepia(0.2) brightness(0.9) contrast(1.2);
+		filter: sepia(0.2) brightness(0.9) contrast(1.2);
+		-webkit-transition: opacity .35s ease-out;
+		transition: opacity .35s ease-out;
+		opacity: .5;
+		will-change: opacity;
+	}
+
+	.card:after {
+		display: block;
+		content: var(--caption);
+		font-weight: 500;
+		color: #555;
+		font-size: 3vmin;
+		opacity: .75;
+		text-align: center;
+	}
+	#hide{
+		display: none;
+		position:absolute;
+		left:400px;
+		top:300px;
+	}
+	#yincang{
+		display: none;
+		position:fixed;
+		left:1100px;
+		top:500px;
+
+	}
+	#wenzi1{
+		display: none;
+	}
+	#wenzi2{
+		display: none;
+	}
+	#wenzi3{
+		display: none;
+	}
+	#wenzi4{
+		display: none;
+	}
+	#wenzi5{
+		display: none;
+	}
+	#wenzi6{
+		display: none;
+	}
+	#wenzi7{
+		display: none;
+	}
+	#web2{
+		display: none;
+	}
+	#picc1{
+		display: none;
+	}
+	#picc2{
+		display: none;
+	}
+
+
+	@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+
+
+
+	<script type="text/javascript">
+		setTimeout(function(){ document.getElementById("hide").style.display = "block"; }, 25000);
+		setTimeout(function(){ document.getElementById("yincang").style.display = "block"; }, 45000);
+	</script>
+    <link href="css/default.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body id="body">
+<audio src="music/Cornetto - I'm in love.mp3" autoplay="autoplay" loop="loop" id="bgm"></audio>
+<script>
+	document.getElementById("bgm").volume = 0.2;//背景音乐音量设置
+</script>
+<div id="yincang" style="font-size: 20px;font-family: 隶书;color: red">点这里偶</div>
+<script>
+	document.getElementById('yincang').onclick = function(){
+		document.getElementById("mainDiv").style.display = "none";
+		document.getElementById("loveHeart").style.display = "none";
+		document.getElementById("hide").style.display = "none";
+		document.getElementById("yincang").style.display = "none";//隐藏所有的div标签
+		document.getElementById("body").style.backgroundColor='black';
+		document.getElementById("wenzi1").style.display="block";
+		setTimeout(function(){document.getElementById("wenzi1").style.display="none"; }, 3000);
+		setTimeout(function(){document.getElementById("wenzi2").style.display="block"; }, 5000);
+		setTimeout(function(){document.getElementById("wenzi2").style.display="none"; }, 7000);
+		setTimeout(function(){document.getElementById("wenzi3").style.display="block"; }, 9000);
+		setTimeout(function(){document.getElementById("wenzi3").style.display="none"; }, 11000);
+		setTimeout(function(){document.getElementById("picc1").style.display="block"; }, 13000);
+		setTimeout(function(){document.getElementById("picc1").style.display="none"; }, 15000);
+		setTimeout(function(){document.getElementById("wenzi4").style.display="block"; }, 17000);
+		setTimeout(function(){document.getElementById("wenzi4").style.display="none"; }, 19000);
+		setTimeout(function(){document.getElementById("wenzi5").style.display="block"; }, 21000);
+		setTimeout(function(){document.getElementById("wenzi5").style.display="none"; }, 23000);
+		setTimeout(function(){document.getElementById("wenzi6").style.display="block"; }, 25000);
+		setTimeout(function(){document.getElementById("wenzi6").style.display="none"; }, 27000);
+		setTimeout(function(){document.getElementById("picc2").style.display="block"; }, 29000);
+		setTimeout(function(){document.getElementById("picc2").style.display="none"; }, 31000);
+		setTimeout(function(){document.getElementById("wenzi7").style.display="block"; }, 33000);
+		setTimeout(function(){document.getElementById("wenzi7").style.display="none"; }, 35000);
+		setTimeout(function(){document.getElementById("web2").style.display="block"; }, 37000);
+	}
+</script>
+<div id="web2" >
+	<iframe src="demo.html" width="1400" height="1600" scrolling="no" frameborder="0"> </iframe>
+</div>
+<div id="wenzi1">
+	<p style="font-family: 华文行楷;font-size:40px;text-align: center;line-height:500px;color: #fafafa" >故事就这么开始了</p>
+</div>
+<div id="wenzi2">
+	<p style="font-family: 华文行楷;font-size:40px;text-align: center;line-height:500px;color: #fafafa">最开始的开始，是谁撩的谁呢（手动捂嘴）</p>
+</div>
+<div id="wenzi3">
+	<p style="font-family: 华文行楷;font-size:40px;text-align: center;line-height:500px;color: #fafafa">有个坏蛋偷拍了hhhhh</p>
+</div>
+<div id="picc1">
+	<img src="picture/a.jpg" alt="偷拍" height="100%" width="100%"/>
+</div>
+<div id="wenzi4">
+	<p style="font-family: 华文行楷;font-size:40px;text-align: center;line-height:500px;color: #fafafa">抓住了17年冬天的尾巴，两个人在一起了</p>
+</div>
+<div id="wenzi5">
+	<p style="font-family: 华文行楷;font-size:40px;text-align: center;line-height:500px;color: #fafafa">你说，心中的苦越多一丝甜就能弥补</p>
+</div>
+<div id="wenzi6">
+	<p style="font-family: 华文行楷;font-size:40px;text-align: center;line-height:500px;color: #fafafa">我愿意做那一丝甜</p>
+</div>
+<div id="picc2">
+	<img src="picture/b.jpg" alt="在一起咯" height="100%" width="100%"/>
+</div>
+<div id="wenzi7">
+	<p style="font-family: 华文行楷;font-size:40px;text-align: center;line-height:500px;color: #fafafa">从此抽烟喝酒泡吧变成了电影演出书店</p>
+</div>
+<div id="hide">
+	<div class="card-container">
+		<div class="card" style="--image: url('img/01.jpg'); --angle: -5deg; --x: 5%; --y: 15%; --caption: '13club  2017.12.31'"></div>
+		<div class="card" style="--image: url('img/02.jpg'); --angle: -1deg; --x: -10%; --y: -20%; --caption: 'tianjin 2018.4.5'"></div>
+		<div class="card" style="--image: url('img/03.jpg'); --angle: -4deg; --x: -20%; --y: 5%; --caption: 'haerbin 218.2.4'"></div>
+	</div>
+</div>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2017—02-17</span><br />
+			<span class="space"/><span class="comments">第一次见面你风尘仆仆仿佛带着一身故事</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			Boy name = <span class="keyword">Mr</span> DAI;<br />
+			Girl name = <span class="keyword">Mrs</span> XIAO;<br />
+			<span class="comments">// 在这个冬天我们相爱了 </span><br />
+			They took only one month from acquanintances to love;<br />
+			<span class="comments">// 这听起来是不是很疯狂</span><br />
+			The girl like the wind;<br />
+			<span class="comments">//男孩知道总有那么一天会抓不到女孩的手</span><br />
+			The boy only knew it was happy to be with the girl;<br />
+			<span class="comments">// 他们一起抽烟喝酒泡吧</span><br />
+			Then the girl really liked the boy;<br />
+			<span class="comments">// 后来男孩儿和女孩戒了烟和酒</span><br />
+			<span class="comments">// 他们去看电影、演出、书店</span><br />
+			The boy very happy;<br />
+			The girl is also very happy;<br />
+			<span class="comments">// 他们租了个小房子</span><br />
+			<span class="comments">// 一整年没有吵过架红过脸</span><br />
+			<span class="comments">// 第二个年头了，一起挣钱去实现定的一个个小目标</span><br />
+			<br>
+			<br>
+			I want to say:<br />
+			Dear, I love you forever;<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱的，这是我们相爱在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					爱你直到永永远远。<br/>
+					<div class="signature">- 戴先生</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		<a href="#">....</a><br />
+		<a href="#">....</a><br />
+
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2017, 2, 19);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+</body>
+</html>

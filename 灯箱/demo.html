@@ -1,0 +1,484 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Css反转效果</title>
+
+<style>
+
+
+
+
+
+
+	.offset {
+		box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+	}
+	.offset:hover, .offset:focus {
+		box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+	}
+	.offset {
+		--color: #19bc8b;
+		--hover: #1973bc;
+	}
+
+	.pulse:hover,
+	.pulse:focus {
+		-webkit-animation: pulse 1s;
+		animation: pulse 1s;
+		box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+	}
+	@-webkit-keyframes pulse {
+		0% {
+			box-shadow: 0 0 0 0 var(--hover);
+		}
+	}
+	@keyframes pulse {
+		0% {
+			box-shadow: 0 0 0 0 var(--hover);
+		}
+	}
+	.pulse {
+		--color: #ef6eae;
+		--hover: #ef8f6e;
+	}
+	button {
+		color: var(--color);
+		-webkit-transition: 0.25s;
+		transition: 0.25s;
+	}
+	button:hover, button:focus {
+		border-color: var(--hover);
+		color: #fff;
+	}
+	button {
+		background: none;
+		border: 2px solid;
+		font: inherit;
+		line-height: 1;
+		margin: 0.5em;
+		padding: 1em 2em;
+	}
+	code {
+		color: #e4cb58;
+		font: inherit;
+	}
+
+body{
+	background-color:black;
+}
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.wrapper{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 80rem;
+}
+
+.cols{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.col{
+  width: calc(25% - 2rem);
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.container{
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+	-webkit-perspective: 1000px;
+	        perspective: 1000px;
+}
+
+.front,
+.back{
+  background-size: cover;
+	background-position: center;
+	-webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	-o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
+	text-align: center;
+	min-height: 280px;
+	height: auto;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 1.5rem;
+}
+
+.back{
+  background: #cedce7;
+  background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+  background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+  background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+}
+
+.front:after{
+	position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: block;
+    opacity: .6;
+    background-color: #000;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    border-radius: 10px;
+}
+.container:hover .front,
+.container:hover .back{
+    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.inner{
+    -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+            transform: translateY(-50%) translateZ(60px) scale(0.94);
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    outline: 1px solid transparent;
+    -webkit-perspective: inherit;
+            perspective: inherit;
+    z-index: 2;
+}
+
+.container .back{
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.container .front{
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.container:hover .back{
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.container:hover .front{
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.front .inner p{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.front .inner p:after{
+  content: '';
+  width: 4rem;
+  height: 2px;
+  position: absolute;
+  background: #C6D4DF;
+  display: block;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -.75rem;
+}
+
+.front .inner span{
+  color: rgba(255,255,255,0.7);
+  font-family: 'Montserrat';
+  font-weight: 300;
+}
+
+@media screen and (max-width: 64rem){
+  .col{
+    width: calc(33.333333% - 2rem);
+  }
+}
+
+@media screen and (max-width: 48rem){
+  .col{
+    width: calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 32rem){
+  .col{
+    width: 100%;
+    margin: 0 0 2rem 0;
+  }
+}
+	#buttons{
+		position: absolute;
+		left: 0px;;
+		top: 0px;
+	}
+	#buttons2{
+		display: none;
+		position: absolute;
+		left: 0px;;
+		top: 0px;
+	}
+	#xiaoshi{}
+	#word1{
+		display: none;
+	}
+	#word2{
+		display: none;
+	}
+	#word3{
+		display: none;
+	}
+	#word4{
+		display: none;
+	}
+	#shipin{
+		display: none;
+	}
+	#web3{
+		display: none;
+	}
+	#web4{
+		display: none;
+
+	}
+</style>
+
+</head>
+<body>
+
+
+<div class="wrapper" id="xiaoshi">
+  <div class="cols">
+			<div class="col" ontouchstart="this.classList.toggle('hover');">
+				<div class="container">
+					<div class="front" style="background-image: url(img/1.jpg);">
+						<div class="inner">
+							<p>家乐福</p>
+              <span>野猪肉和荷包猪肉元宵</span>
+						</div>
+					</div>
+					<div class="back">
+						<div class="inner">
+						  <p>元宵节灯会，从家乐福开始到古文化街，“野猪肉荷包猪肉”“圆乎乎”仿佛可以玩一整年</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col" ontouchstart="this.classList.toggle('hover');">
+				<div class="container">
+					<div class="front" style="background-image:url(img/2.jpg);">
+						<div class="inner">
+							<p>网红店</p>
+              <span>吃草吃草吃草</span>
+						</div>
+					</div>
+					<div class="back">
+						<div class="inner">
+							<p>作为一个肉食动物，不能忍受一餐只有草</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col" ontouchstart="this.classList.toggle('hover');">
+				<div class="container">
+					<div class="front" style="background-image: url(img/3.jpg);">
+						<div class="inner">
+							<p>星巴克</p>
+              <span>红茶</span>
+						</div>
+					</div>
+					<div class="back">
+						<div class="inner">
+							<p>你说，红茶拿铁是世界上最好喝的，我却背叛了你独爱星冰乐</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col" ontouchstart="this.classList.toggle('hover');">
+				<div class="container">
+					<div class="front" style="background-image: url(img/4.jpg);">
+						<div class="inner">
+							<p>家</p>
+              <span>日料</span>
+						</div>
+					</div>
+					<div class="back">
+						<div class="inner">
+							<p>享受和你一边吃饭一边看美食节目，戴大厨当然也要现学现卖一下</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col" ontouchstart="this.classList.toggle('hover');">
+				<div class="container">
+					<div class="front" style="background-image: url(img/5.jpg);">
+						<div class="inner">
+							<p>日料店</p>
+              <span>烤肉</span>
+						</div>
+					</div>
+					<div class="back">
+						<div class="inner">
+							<p>他家的牛肉超好吃的，先定个小目标吃遍天津</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col" ontouchstart="this.classList.toggle('hover');">
+				<div class="container">
+					<div class="front" style="background-image: url(img/6.jpg);">
+						<div class="inner">
+							<p>玉玲珑</p>
+              <span>鸡丝面</span>
+						</div>
+					</div>
+					<div class="back">
+						<div class="inner">
+							<p>鸡丝面！牛肉闷罐!好吃到不想说话</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col" ontouchstart="this.classList.toggle('hover');">
+				<div class="container">
+					<div class="front" style="background-image: url(img/7.jpg);">
+						<div class="inner">
+							<p>家</p>
+              <span>小炒</span>
+						</div>
+					</div>
+					<div class="back">
+						<div class="inner">
+							<p>给“家人”下厨露两手是一件很幸福的事情</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col" ontouchstart="this.classList.toggle('hover');">
+				<div class="container">
+					<div class="front" style="background-image: url(img/8.jpg);">
+						<div class="inner">
+							<p>青年餐厅</p>
+              <span>烤鸭</span>
+						</div>
+					</div>
+					<div class="back">
+						<div class="inner">
+							<p>青年餐厅这个地方，约了你一整年（梦开始的地方hhhhh）</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+ </div>
+<div id="buttons">
+	<button class="pulse">Pulse</button>
+</div>
+<div id="buttons2">
+	<button class="offset">Click</button>
+</div>
+<div id="word1">
+	<p style="font-family: 华文行楷;font-size:40px;text-align: center;line-height:500px;color: #fafafa">当然不能落下王者荣耀</p>
+</div>
+<div id="shipin">
+	<video src="wangzherongyao.mp4" controls="controls" id="start" height="100%" width="100%"></video>
+</div>
+
+<div id="word2">
+	<p style="font-family: 华文行楷;font-size:40px;text-align: center;line-height:500px;color: #fafafa">俩戏精总是笑的像个撒比</p>
+</div>
+<div id="word3">
+	<p style="font-family: 华文行楷;font-size:40px;text-align: center;line-height:500px;color: #fafafa">我们的快乐不止这么一点点</p>
+</div>
+<div id="word4">
+	<p style="font-family: 华文行楷;font-size:40px;text-align: center;line-height:500px;color: #fafafa">还有。。。。</p>
+</div>
+<div id="web3">
+	<iframe src="index.html" width="1280px" height="610px" scrolling="no" frameborder="0"></iframe>
+</div>
+<div id="web4">
+	<iframe src="biao.html" width="1280px" height="610px" scrolling="no" frameborder="0"></iframe>
+</div>
+
+
+
+
+
+
+<script>
+
+	document.getElementById("buttons").onclick=function () {
+		setTimeout(function(){document.getElementById("buttons").style.display = "none";}, 500);
+		setTimeout(function(){document.getElementById("xiaoshi").style.display = "none";}, 500);
+		setTimeout(function(){document.getElementById("word1").style.display = "block";}, 1500);
+		setTimeout(function(){document.getElementById("word1").style.display = "none";}, 3500);
+		setTimeout(function(){document.getElementById("shipin").style.display = "block";}, 5500);
+		setTimeout(function(){playVid()},5500);
+		setTimeout(function(){document.getElementById("shipin").style.display = "none";}, 15500);
+		setTimeout(function(){document.getElementById("word2").style.display = "block";}, 17500);
+		setTimeout(function(){document.getElementById("word2").style.display = "none";}, 19500);
+		setTimeout(function(){document.getElementById("word3").style.display = "block";}, 21500);
+		setTimeout(function(){document.getElementById("word3").style.display = "none";}, 23500);
+		setTimeout(function(){document.getElementById("word4").style.display = "block";}, 25500);
+		setTimeout(function(){document.getElementById("word4").style.display = "none";}, 27500);
+		setTimeout(function(){document.getElementById("web3").style.display = "block";}, 29500);
+		setTimeout(function(){document.getElementById("buttons2").style.display = "block";}, 29500);
+
+	}
+	document.getElementById("buttons2").onclick=function () {
+		setTimeout(function(){document.getElementById("web3").style.display = "none";}, 1000);
+		setTimeout(function(){document.getElementById("buttons2").style.display = "none";}, 1000);
+		setTimeout(function(){document.getElementById("web4").style.display = "block";}, 2000);
+
+	}
+</script>
+<script>
+	var x = document.getElementById("start");
+	function playVid(){
+		x.play();
+	}
+
+</script>
+ 
+</body>
+</html>

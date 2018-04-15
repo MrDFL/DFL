@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+
+      <link rel="stylesheet" href="css/style.css">
+  <style>
+    #biaobaineirong{
+      display: none;
+    }
+    #question{
+
+    }
+  </style>
+
+  
+</head>
+
+<body>
+<div id="question">
+  <input type="text" placeholder="Do you love me?" id="biaobai" onkeyup="upperCase(this.id)"/>
+
+</div>
+<div id="biaobaineirong">
+  <p style="font-family: 微软雅黑;font-size:40px;text-align: center;line-height:500px;color: #fafafa">I LOVE YOU TOO</p>
+</div>
+
+  <script src='js/amxzqr.js'></script>
+
+    <script src="js/index.js"></script>
+<script>
+  function upperCase(x)
+  {
+    var y=document.getElementById(x).value
+    document.getElementById(x).value=y.toUpperCase()
+  }
+  var int=setInterval("love()","1000");
+  function love() {
+
+    if(document.getElementById("biaobai").value=="I LOVE YOU"){
+      setTimeout(function(){document.getElementById("question").style.display="none"; }, 1000);
+      setTimeout(function(){document.getElementById("biaobaineirong").style.display="block"; }, 3000);
+      clearInterval(int)
+
+
+
+    }
+  }
+
+
+
+</script>
+
+</body>
+</html>
